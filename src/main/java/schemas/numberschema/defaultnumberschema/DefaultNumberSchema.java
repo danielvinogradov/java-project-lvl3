@@ -1,12 +1,12 @@
 package schemas.numberschema.defaultnumberschema;
 
-import schemas.AbstractSchema;
+import schemas.BaseSchema;
 import schemas.numberschema.NumberSchema;
 import schemas.util.SchemaHelper;
 
 import java.util.function.Predicate;
 
-public final class DefaultNumberSchema extends AbstractSchema implements NumberSchema {
+public class DefaultNumberSchema extends BaseSchema implements NumberSchema {
 
     @Override
     public NumberSchema required() {

@@ -1,12 +1,12 @@
 package schemas.stringschema.defaultstringschema;
 
-import schemas.AbstractSchema;
+import schemas.BaseSchema;
 import schemas.stringschema.StringSchema;
 import schemas.util.SchemaHelper;
 
 import java.util.function.Predicate;
 
-public final class DefaultStringSchema extends AbstractSchema implements StringSchema {
+public class DefaultStringSchema extends BaseSchema implements StringSchema {
 
     @Override
     public StringSchema required() {

@@ -1,13 +1,13 @@
 package schemas.mapschema.defaultmapschema;
 
-import schemas.AbstractSchema;
+import schemas.BaseSchema;
 import schemas.Schema;
 import schemas.mapschema.MapSchema;
 
 import java.util.Map;
 import java.util.function.Predicate;
 
-public final class DefaultMapSchema extends AbstractSchema implements MapSchema {
+public class DefaultMapSchema extends BaseSchema implements MapSchema {
 
     private Map<String, Schema> schemasMap;
 

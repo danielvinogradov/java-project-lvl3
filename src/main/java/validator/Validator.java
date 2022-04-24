@@ -7,7 +7,7 @@ import schemas.numberschema.defaultnumberschema.DefaultNumberSchema;
 import schemas.stringschema.StringSchema;
 import schemas.stringschema.defaultstringschema.DefaultStringSchema;
 
-public final class Validator {
+public class Validator {
 
     public StringSchema string() {
         return new DefaultStringSchema();
