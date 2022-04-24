@@ -27,8 +27,13 @@ public class DefaultNumberSchema extends BaseSchema implements NumberSchemaX {
      */
     @Override
     public DefaultNumberSchema positive() {
-        Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, Integer.class)
-                && ((Integer) o) > 0;
+        Predicate<Object> validator = (Object o) -> {
+            if (o == null) {
+                return true;
+            }
+            return SchemaHelper.checkClassAndNull(o, Integer.class)
+                    && ((Integer) o) > 0;
+        };
         addValidator(validator);
         return this;
     }
