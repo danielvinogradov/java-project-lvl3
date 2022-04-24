@@ -59,7 +59,7 @@ public class DefaultMapSchema extends BaseSchema implements MapSchema {
         boolean validSchema = false;
         if (schemasMap == null) {
             validSchema = true;
-        } else if (v instanceof Map<?,?>) {
+        } else if (v instanceof Map<?, ?>) {
             Map<String, ?> m = (Map<String, ?>) v;
             validSchema = schemasMap.keySet().stream()
                     .allMatch(key -> {
