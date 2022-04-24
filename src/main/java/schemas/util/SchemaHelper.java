@@ -1,6 +1,6 @@
 package schemas.util;
 
-public class SchemaHelper {
+public final class SchemaHelper {
 
     private SchemaHelper() {
     }
