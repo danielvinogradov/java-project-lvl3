@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 public class DefaultMapSchema extends BaseSchema implements MapSchema {
 
-    private Map<String, ? extends BaseSchema> schemasMap;
+    private Map<String, ?> schemasMap;
 
     /**
      * Ф.
@@ -43,7 +43,7 @@ public class DefaultMapSchema extends BaseSchema implements MapSchema {
      * @return Ф.
      */
     @Override
-    public MapSchema shape(Map<String, ? extends BaseSchema> schemas) {
+    public MapSchema shape(Map<String, ?> schemas) {
         this.schemasMap = schemas;
         return this;
     }
@@ -67,7 +67,7 @@ public class DefaultMapSchema extends BaseSchema implements MapSchema {
             Map<String, ?> m = (Map<String, ?>) v;
             validSchema = schemasMap.keySet().stream()
                     .allMatch(key -> {
-                        Schema schema = schemasMap.get(key);
+                        Schema schema = (Schema) schemasMap.get(key);
                         Object val = m.get(key);
                         return schema != null && schema.isValid(val);
                     });

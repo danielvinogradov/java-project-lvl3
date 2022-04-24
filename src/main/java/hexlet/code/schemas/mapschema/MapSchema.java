@@ -1,6 +1,6 @@
 package hexlet.code.schemas.mapschema;
 
-import hexlet.code.schemas.BaseSchema;
+//import hexlet.code.schemas.BaseSchema;
 //import hexlet.code.schemas.Schema;
 
 import java.util.Map;
@@ -36,6 +36,6 @@ public interface MapSchema {
      * @param schemas Схема валидации данных.
      * @return Инстанс MapSchema.
      */
-    MapSchema shape(Map<String, ? extends BaseSchema> schemas);
+    MapSchema shape(Map<String, ?> schemas);
 
 }
