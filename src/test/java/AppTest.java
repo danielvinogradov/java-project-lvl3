@@ -1,6 +1,6 @@
-import org.junit.jupiter.api.Test;
 import hexlet.code.schemas.stringschema.StringSchema;
 import hexlet.code.validator.Validator;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -49,6 +49,7 @@ class AppTest {
         actual = schema.isValid("what does the fox say"); // false
         // уже false, так как добавлена ещё одна проверка contains("whatthe")
         assertEquals(expected, actual);
+
     }
 
 }

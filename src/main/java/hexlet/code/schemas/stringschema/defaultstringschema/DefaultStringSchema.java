@@ -14,7 +14,7 @@ public class DefaultStringSchema extends BaseSchema implements StringSchema {
      * @return A.
      */
     @Override
-    public StringSchema required() {
+    public DefaultStringSchema required() {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, String.class)
                 && !((String) o).isEmpty();
         addValidator(validator);
@@ -28,7 +28,7 @@ public class DefaultStringSchema extends BaseSchema implements StringSchema {
      * @return A.
      */
     @Override
-    public StringSchema minLength(int minLength) {
+    public DefaultStringSchema minLength(int minLength) {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, String.class)
                 && ((String) o).length() >= minLength;
         addValidator(validator);
@@ -42,7 +42,7 @@ public class DefaultStringSchema extends BaseSchema implements StringSchema {
      * @return A.
      */
     @Override
-    public StringSchema contains(String str) {
+    public DefaultStringSchema contains(String str) {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, String.class)
                 && ((String) o).contains(str);
         addValidator(validator);

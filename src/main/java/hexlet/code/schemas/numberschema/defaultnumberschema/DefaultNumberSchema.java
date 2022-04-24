@@ -14,7 +14,7 @@ public class DefaultNumberSchema extends BaseSchema implements NumberSchemaX {
      * @return A.
      */
     @Override
-    public NumberSchemaX required() {
+    public DefaultNumberSchema required() {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, Integer.class);
         addValidator(validator);
         return this;
@@ -26,7 +26,7 @@ public class DefaultNumberSchema extends BaseSchema implements NumberSchemaX {
      * @return A.
      */
     @Override
-    public NumberSchemaX positive() {
+    public DefaultNumberSchema positive() {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, Integer.class)
                 && ((Integer) o) > 0;
         addValidator(validator);
@@ -41,7 +41,7 @@ public class DefaultNumberSchema extends BaseSchema implements NumberSchemaX {
      * @return A.
      */
     @Override
-    public NumberSchemaX range(int min, int max) {
+    public DefaultNumberSchema range(int min, int max) {
         Predicate<Object> validator = (Object o) -> {
             boolean classNullCheckResult = SchemaHelper.checkClassAndNull(o, Integer.class);
             if (classNullCheckResult) {
