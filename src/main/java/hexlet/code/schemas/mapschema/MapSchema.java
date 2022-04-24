@@ -36,6 +36,6 @@ public interface MapSchema {
      * @param schemas Схема валидации данных.
      * @return Инстанс MapSchema.
      */
-    MapSchema shape(Map<String, BaseSchema> schemas);
+    MapSchema shape(Map<String, ? extends BaseSchema> schemas);
 
 }
