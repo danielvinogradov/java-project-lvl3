@@ -1,2 +1,2 @@
-public class Validator extends validator.Validator {
+public final class Validator extends validator.Validator {
 }

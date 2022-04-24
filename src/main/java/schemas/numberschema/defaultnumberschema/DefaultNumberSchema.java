@@ -8,6 +8,11 @@ import java.util.function.Predicate;
 
 public class DefaultNumberSchema extends BaseSchema implements NumberSchema {
 
+    /**
+     * A.
+     *
+     * @return A.
+     */
     @Override
     public NumberSchema required() {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, Integer.class);
@@ -15,6 +20,11 @@ public class DefaultNumberSchema extends BaseSchema implements NumberSchema {
         return this;
     }
 
+    /**
+     * A.
+     *
+     * @return A.
+     */
     @Override
     public NumberSchema positive() {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, Integer.class)
@@ -23,6 +33,13 @@ public class DefaultNumberSchema extends BaseSchema implements NumberSchema {
         return this;
     }
 
+    /**
+     * A.
+     *
+     * @param min Минимальное значение.
+     * @param max Максимальное значение.
+     * @return A.
+     */
     @Override
     public NumberSchema range(int min, int max) {
         Predicate<Object> validator = (Object o) -> {

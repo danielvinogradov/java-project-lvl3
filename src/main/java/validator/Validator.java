@@ -9,14 +9,29 @@ import schemas.stringschema.defaultstringschema.DefaultStringSchema;
 
 public class Validator {
 
+    /**
+     * A.
+     *
+     * @return A.
+     */
     public StringSchema string() {
         return new DefaultStringSchema();
     }
 
+    /**
+     * A.
+     *
+     * @return A.
+     */
     public NumberSchema number() {
         return new DefaultNumberSchema();
     }
 
+    /**
+     * A.
+     *
+     * @return A.
+     */
     public MapSchema map() {
         return new DefaultMapSchema();
     }

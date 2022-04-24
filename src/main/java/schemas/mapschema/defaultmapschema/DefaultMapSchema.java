@@ -11,6 +11,11 @@ public class DefaultMapSchema extends BaseSchema implements MapSchema {
 
     private Map<String, Schema> schemasMap;
 
+    /**
+     * Ф.
+     *
+     * @return Ф.
+     */
     @Override
     public MapSchema required() {
         Predicate<Object> validator = (Object o) -> o instanceof Map<?, ?>;
@@ -18,6 +23,12 @@ public class DefaultMapSchema extends BaseSchema implements MapSchema {
         return this;
     }
 
+    /**
+     * Ф.
+     *
+     * @param size J.
+     * @return Ф.
+     */
     @Override
     public MapSchema sizeof(int size) {
         Predicate<Object> validator = (Object o) -> o instanceof Map<?, ?> && ((Map<?, ?>) o).size() == size;
@@ -25,12 +36,24 @@ public class DefaultMapSchema extends BaseSchema implements MapSchema {
         return this;
     }
 
+    /**
+     * Ф.
+     *
+     * @param schemas J.
+     * @return Ф.
+     */
     @Override
     public MapSchema shape(Map<String, Schema> schemas) {
         this.schemasMap = schemas;
         return this;
     }
 
+    /**
+     * Ф.
+     *
+     * @param v L.
+     * @return Ф.
+     */
     @Override
     public boolean isValid(Object v) {
         if (!(v instanceof Map<?, ?>)) { // todo

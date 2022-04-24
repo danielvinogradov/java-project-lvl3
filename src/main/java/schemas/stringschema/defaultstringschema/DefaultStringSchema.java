@@ -8,6 +8,11 @@ import java.util.function.Predicate;
 
 public class DefaultStringSchema extends BaseSchema implements StringSchema {
 
+    /**
+     * A.
+     *
+     * @return A.
+     */
     @Override
     public StringSchema required() {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, String.class)
@@ -16,6 +21,12 @@ public class DefaultStringSchema extends BaseSchema implements StringSchema {
         return this;
     }
 
+    /**
+     * A.
+     *
+     * @param minLength A.
+     * @return A.
+     */
     @Override
     public StringSchema minLength(int minLength) {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, String.class)
@@ -24,6 +35,12 @@ public class DefaultStringSchema extends BaseSchema implements StringSchema {
         return this;
     }
 
+    /**
+     * A.
+     *
+     * @param str A.
+     * @return A.
+     */
     @Override
     public StringSchema contains(String str) {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, String.class)
