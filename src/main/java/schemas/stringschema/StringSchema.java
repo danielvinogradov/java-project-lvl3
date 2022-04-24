@@ -2,7 +2,7 @@ package schemas.stringschema;
 
 public interface StringSchema {
 
-    boolean isValid(String s);
+    boolean isValid(Object o);
 
     StringSchema required();
 

@@ -8,32 +8,16 @@ import java.util.function.Predicate;
 
 /**
  * Общая функциональность любой схемы.
- *
- * @param <T> Тип значения, которое валидируется.
  */
-public abstract class AbstractSchema<T> {
-
-    /**
-     * Значение.
-     */
-    private T value;
+public abstract class AbstractSchema {
 
     /**
      * Список валидаторов.
      */
-    private final List<Predicate<T>> validatorsList;
+    private final List<Predicate<Object>> validatorsList;
 
     protected AbstractSchema() {
         this.validatorsList = new ArrayList<>();
-    }
-
-    /**
-     * Геттер. Получить значение.
-     *
-     * @return Значение.
-     */
-    protected T getValue() {
-        return value;
     }
 
     /**
@@ -41,17 +25,8 @@ public abstract class AbstractSchema<T> {
      *
      * @return Список валидаторов.
      */
-    protected List<Predicate<T>> getValidatorsList() {
+    protected List<Predicate<Object>> getValidatorsList() {
         return validatorsList;
-    }
-
-    /**
-     * Сеттер. Установить новое значение.
-     *
-     * @param v Новое значение.
-     */
-    protected void setValue(T v) {
-        this.value = v;
     }
 
     /**
@@ -59,8 +34,20 @@ public abstract class AbstractSchema<T> {
      *
      * @param predicate Новый валидатор.
      */
-    protected void addValidator(@NotNull Predicate<T> predicate) {
+    protected void addValidator(@NotNull Predicate<Object> predicate) {
         this.validatorsList.add(predicate);
+    }
+
+    /**
+     * Проверяет валидность переданного значения, применяя к нему все
+     * добавленные валидаторы.
+     *
+     * @param v Проверяемое значение.
+     * @return Значение валидно / не валидно.
+     */
+    public final boolean isValid(Object v) {
+        return getValidatorsList().stream()
+                .allMatch(el -> el.test(v));
     }
 
 }
