@@ -56,14 +56,10 @@ public class DefaultMapSchema extends BaseSchema implements MapSchema {
      */
     @Override
     public boolean isValid(Object v) {
-        if (!(v instanceof Map<?, ?>)) { // todo
-            return false;
-        }
-
-        boolean validSchema;
+        boolean validSchema = false;
         if (schemasMap == null) {
             validSchema = true;
-        } else {
+        } else if (v instanceof Map<?,?>) {
             Map<String, ?> m = (Map<String, ?>) v;
             validSchema = schemasMap.keySet().stream()
                     .allMatch(key -> {
