@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 /**
  * Общая функциональность любой схемы.
  */
-public abstract class AbstractSchema {
+public abstract class AbstractSchema implements Schema {
 
     /**
      * Список валидаторов.
@@ -45,7 +45,8 @@ public abstract class AbstractSchema {
      * @param v Проверяемое значение.
      * @return Значение валидно / не валидно.
      */
-    public final boolean isValid(Object v) {
+    @Override
+    public boolean isValid(Object v) {
         return getValidatorsList().stream()
                 .allMatch(el -> el.test(v));
     }

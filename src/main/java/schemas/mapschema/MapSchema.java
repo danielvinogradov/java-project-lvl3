@@ -1,5 +1,9 @@
 package schemas.mapschema;
 
+import schemas.Schema;
+
+import java.util.Map;
+
 public interface MapSchema {
 
     /**
@@ -16,5 +20,21 @@ public interface MapSchema {
      * @return Инстанс MapSchema.
      */
     MapSchema sizeof(int size);
+
+    /**
+     * Добавить вложенную валидацию.
+     * <p>
+     * Например:
+     * <code>
+     * Map<String, BaseSchema> schemas = new HashMap<>();
+     * schemas.put("name", v.string().required());
+     * schemas.put("age", v.number().positive());
+     * schema.shape(schemas);
+     * </code>
+     *
+     * @param schemas Схема валидации данных.
+     * @return Инстанс MapSchema.
+     */
+    MapSchema shape(Map<String, Schema> schemas);
 
 }
