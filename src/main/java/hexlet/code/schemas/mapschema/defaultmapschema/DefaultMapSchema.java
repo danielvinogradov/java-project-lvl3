@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 public class DefaultMapSchema extends BaseSchema implements MapSchema {
 
-    private Map<String, Schema> schemasMap;
+    private Map<String, BaseSchema> schemasMap;
 
     /**
      * Ф.
@@ -43,7 +43,7 @@ public class DefaultMapSchema extends BaseSchema implements MapSchema {
      * @return Ф.
      */
     @Override
-    public MapSchema shape(Map<String, Schema> schemas) {
+    public MapSchema shape(Map<String, BaseSchema> schemas) {
         this.schemasMap = schemas;
         return this;
     }
