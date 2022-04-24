@@ -1,11 +1,14 @@
 package hexlet.code.validator;
 
-import hexlet.code.schemas.mapschema.MapSchema;
-import hexlet.code.schemas.mapschema.defaultmapschema.DefaultMapSchema;
-import hexlet.code.schemas.numberschema.NumberSchema;
-import hexlet.code.schemas.numberschema.defaultnumberschema.DefaultNumberSchema;
-import hexlet.code.schemas.stringschema.StringSchema;
-import hexlet.code.schemas.stringschema.defaultstringschema.DefaultStringSchema;
+//import hexlet.code.schemas.mapschema.MapSchema;
+import hexlet.code.schemas.MapSchema;
+import hexlet.code.schemas.NumberSchema;
+import hexlet.code.schemas.StringSchema;
+//import hexlet.code.schemas.mapschema.defaultmapschema.DefaultMapSchema;
+//import hexlet.code.schemas.numberschema.NumberSchemaX;
+//import hexlet.code.schemas.numberschema.defaultnumberschema.DefaultNumberSchema;
+//import hexlet.code.schemas.stringschema.StringSchema;
+//import hexlet.code.schemas.stringschema.defaultstringschema.DefaultStringSchema;
 
 public class Validator {
 
@@ -15,7 +18,7 @@ public class Validator {
      * @return A.
      */
     public StringSchema string() {
-        return new DefaultStringSchema();
+        return new hexlet.code.schemas.StringSchema();
     }
 
     /**
@@ -24,7 +27,7 @@ public class Validator {
      * @return A.
      */
     public NumberSchema number() {
-        return new DefaultNumberSchema();
+        return new NumberSchema();
     }
 
     /**
@@ -33,7 +36,7 @@ public class Validator {
      * @return A.
      */
     public MapSchema map() {
-        return new DefaultMapSchema();
+        return new MapSchema();
     }
 
 }
