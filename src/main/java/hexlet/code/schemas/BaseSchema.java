@@ -1,4 +1,4 @@
-package schemas;
+package hexlet.code.schemas;
 
 import org.jetbrains.annotations.NotNull;
 

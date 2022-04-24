@@ -1,8 +1,8 @@
-package schemas.mapschema.defaultmapschema;
+package hexlet.code.schemas.mapschema.defaultmapschema;
 
-import schemas.BaseSchema;
-import schemas.Schema;
-import schemas.mapschema.MapSchema;
+import hexlet.code.schemas.BaseSchema;
+import hexlet.code.schemas.mapschema.MapSchema;
+import hexlet.code.schemas.Schema;
 
 import java.util.Map;
 import java.util.function.Predicate;

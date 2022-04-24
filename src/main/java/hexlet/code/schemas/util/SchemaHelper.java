@@ -1,4 +1,4 @@
-package schemas.util;
+package hexlet.code.schemas.util;
 
 public final class SchemaHelper {
 

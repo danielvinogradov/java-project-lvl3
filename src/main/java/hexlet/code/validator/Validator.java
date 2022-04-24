@@ -1,11 +1,11 @@
-package validator;
+package hexlet.code.validator;
 
-import schemas.mapschema.MapSchema;
-import schemas.mapschema.defaultmapschema.DefaultMapSchema;
-import schemas.numberschema.NumberSchema;
-import schemas.numberschema.defaultnumberschema.DefaultNumberSchema;
-import schemas.stringschema.StringSchema;
-import schemas.stringschema.defaultstringschema.DefaultStringSchema;
+import hexlet.code.schemas.mapschema.MapSchema;
+import hexlet.code.schemas.mapschema.defaultmapschema.DefaultMapSchema;
+import hexlet.code.schemas.numberschema.NumberSchema;
+import hexlet.code.schemas.numberschema.defaultnumberschema.DefaultNumberSchema;
+import hexlet.code.schemas.stringschema.StringSchema;
+import hexlet.code.schemas.stringschema.defaultstringschema.DefaultStringSchema;
 
 public class Validator {
 

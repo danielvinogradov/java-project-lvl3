@@ -1,8 +1,8 @@
-package schemas.numberschema.defaultnumberschema;
+package hexlet.code.schemas.numberschema.defaultnumberschema;
 
-import schemas.BaseSchema;
-import schemas.numberschema.NumberSchema;
-import schemas.util.SchemaHelper;
+import hexlet.code.schemas.BaseSchema;
+import hexlet.code.schemas.numberschema.NumberSchema;
+import hexlet.code.schemas.util.SchemaHelper;
 
 import java.util.function.Predicate;
 

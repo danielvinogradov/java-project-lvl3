@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
-import schemas.stringschema.StringSchema;
-import validator.Validator;
+import hexlet.code.schemas.stringschema.StringSchema;
+import hexlet.code.validator.Validator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

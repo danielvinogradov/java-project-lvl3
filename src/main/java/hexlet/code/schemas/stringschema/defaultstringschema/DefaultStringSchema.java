@@ -1,8 +1,8 @@
-package schemas.stringschema.defaultstringschema;
+package hexlet.code.schemas.stringschema.defaultstringschema;
 
-import schemas.BaseSchema;
-import schemas.stringschema.StringSchema;
-import schemas.util.SchemaHelper;
+import hexlet.code.schemas.BaseSchema;
+import hexlet.code.schemas.stringschema.StringSchema;
+import hexlet.code.schemas.util.SchemaHelper;
 
 import java.util.function.Predicate;
 

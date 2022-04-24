@@ -1,4 +1,4 @@
-package schemas.stringschema;
+package hexlet.code.schemas.stringschema;
 
 public interface StringSchema {
 

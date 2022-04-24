@@ -1,6 +1,6 @@
-package schemas.mapschema;
+package hexlet.code.schemas.mapschema;
 
-import schemas.Schema;
+import hexlet.code.schemas.Schema;
 
 import java.util.Map;
 

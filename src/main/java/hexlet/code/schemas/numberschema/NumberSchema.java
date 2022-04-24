@@ -1,4 +1,4 @@
-package schemas.numberschema;
+package hexlet.code.schemas.numberschema;
 
 public interface NumberSchema {
 
