@@ -1,5 +1,7 @@
 package validator;
 
+import schemas.mapschema.MapSchema;
+import schemas.mapschema.defaultmapschema.DefaultMapSchema;
 import schemas.numberschema.NumberSchema;
 import schemas.numberschema.defaultnumberschema.DefaultNumberSchema;
 import schemas.stringschema.StringSchema;
@@ -13,6 +15,10 @@ public final class Validator {
 
     public NumberSchema number() {
         return new DefaultNumberSchema();
+    }
+
+    public MapSchema map() {
+        return new DefaultMapSchema();
     }
 
 }
