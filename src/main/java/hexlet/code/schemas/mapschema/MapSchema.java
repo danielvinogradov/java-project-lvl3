@@ -7,6 +7,14 @@ import java.util.Map;
 public interface MapSchema {
 
     /**
+     * Возвращает статус валидности значения.
+     *
+     * @param o Проверяемое значение.
+     * @return Валидно/ не валидно.
+     */
+    boolean isValid(Object o);
+
+    /**
      * Требуется тип данных Map.
      *
      * @return Инстанс MapSchema.

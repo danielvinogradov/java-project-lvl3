@@ -9,8 +9,6 @@ import java.util.function.Predicate;
 
 public final class DefaultMapSchema extends AbstractSchema implements MapSchema {
 
-    private Map<String, Schema> schemasMap;
-
     @Override
     public MapSchema required() {
         Predicate<Object> validator = (Object o) -> o instanceof Map<?, ?>;
@@ -27,25 +25,24 @@ public final class DefaultMapSchema extends AbstractSchema implements MapSchema 
 
     @Override
     public MapSchema shape(Map<String, Schema> schemas) {
-        this.schemasMap = schemas;
+        Predicate<Object> validator = (Object o) -> {
+            if (o == null) {
+                return true;
+            }
+
+            if (!(o instanceof Map<?, ?>)) {
+                return false;
+            }
+
+            return schemas.keySet().stream()
+                    .allMatch(key -> {
+                        Schema schema = schemas.get(key);
+                        Object checkedValue = ((Map<?, ?>) o).get(key);
+                        return schema.isValid(checkedValue);
+                    });
+        };
+        addValidator(validator);
         return this;
     }
 
-    @Override
-    public boolean isValid(Object v) {
-        boolean validSchema = false;
-        if (schemasMap == null) {
-            validSchema = true;
-        } else if (v instanceof Map<?, ?>) {
-            Map<String, ?> m = (Map<String, ?>) v;
-            validSchema = schemasMap.keySet().stream()
-                    .allMatch(key -> {
-                        Schema schema = schemasMap.get(key);
-                        Object val = m.get(key);
-                        return schema != null && schema.isValid(val);
-                    });
-        }
-
-        return super.isValid(v) && validSchema;
-    }
 }
