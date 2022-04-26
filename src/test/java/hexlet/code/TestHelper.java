@@ -14,8 +14,9 @@ public final class TestHelper {
 
     public static final int ZERO = 0;
 
+    public static final String EMPTY_STRING = "";
+
     private TestHelper() {
     }
-
 
 }

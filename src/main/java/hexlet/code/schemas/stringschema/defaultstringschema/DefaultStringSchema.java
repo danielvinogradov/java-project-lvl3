@@ -3,6 +3,7 @@ package hexlet.code.schemas.stringschema.defaultstringschema;
 import hexlet.code.schemas.AbstractSchema;
 import hexlet.code.schemas.stringschema.StringSchema;
 import hexlet.code.schemas.util.SchemaHelper;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Predicate;
 
@@ -25,7 +26,7 @@ public final class DefaultStringSchema extends AbstractSchema implements StringS
     }
 
     @Override
-    public StringSchema contains(String str) {
+    public StringSchema contains(@NotNull String str) {
         Predicate<Object> validator = (Object o) -> SchemaHelper.checkClassAndNull(o, String.class)
                 && ((String) o).contains(str);
         addValidator(validator);
