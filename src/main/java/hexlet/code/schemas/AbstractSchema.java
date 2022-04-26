@@ -9,14 +9,14 @@ import java.util.function.Predicate;
 /**
  * Общая функциональность любой схемы.
  */
-public abstract class BaseSchema implements Schema {
+public abstract class AbstractSchema implements Schema {
 
     /**
      * Список валидаторов.
      */
     private final List<Predicate<Object>> validatorsList;
 
-    protected BaseSchema() {
+    protected AbstractSchema() {
         this.validatorsList = new ArrayList<>();
     }
 

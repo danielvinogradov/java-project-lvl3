@@ -1,6 +1,6 @@
 package hexlet.code.schemas.numberschema;
 
-public interface NumberSchemaX {
+public interface NumberSchema {
 
     /**
      * Проверяет валидность значения.
@@ -15,14 +15,14 @@ public interface NumberSchemaX {
      *
      * @return Инстанс схемы.
      */
-    NumberSchemaX required();
+    NumberSchema required();
 
     /**
      * Положительное число.
      *
      * @return Инстанс схемы.
      */
-    NumberSchemaX positive();
+    NumberSchema positive();
 
     /**
      * Диапазон, в который должны попадать числа включая границы.
@@ -31,6 +31,6 @@ public interface NumberSchemaX {
      * @param max Максимальное значение.
      * @return Инстанс схемы.
      */
-    NumberSchemaX range(int min, int max);
+    NumberSchema range(int min, int max);
 
 }
