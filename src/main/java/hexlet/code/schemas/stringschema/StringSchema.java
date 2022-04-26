@@ -1,13 +1,32 @@
 package hexlet.code.schemas.stringschema;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface StringSchema {
 
     boolean isValid(Object o);
 
+    /**
+     * Проверяет, что строка не пустая, и не равна null.
+     *
+     * @return Валидно / не валидно.
+     */
     StringSchema required();
 
+    /**
+     * Проверяет, что значение имеет длину не меньшую, чем minLength.
+     *
+     * @param minLength Минимальная длина.
+     * @return Валидно / не валидно.
+     */
     StringSchema minLength(int minLength);
 
-    StringSchema contains(String str);
+    /**
+     * Содержит ли значение переданную подстроку.
+     *
+     * @param str Подстрока, наличие которой проверяется.
+     * @return Валидно / не валидно.
+     */
+    StringSchema contains(@NotNull String str);
 
 }
