@@ -4,14 +4,9 @@ import hexlet.code.schemas.Schema;
 
 import java.util.Map;
 
-public interface MapSchema {
+public interface MapSchema extends Schema {
 
-    /**
-     * Возвращает статус валидности значения.
-     *
-     * @param o Проверяемое значение.
-     * @return Валидно/ не валидно.
-     */
+    @Override
     boolean isValid(Object o);
 
     /**

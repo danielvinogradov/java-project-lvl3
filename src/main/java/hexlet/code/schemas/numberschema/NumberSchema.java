@@ -1,13 +1,10 @@
 package hexlet.code.schemas.numberschema;
 
-public interface NumberSchema {
+import hexlet.code.schemas.Schema;
 
-    /**
-     * Проверяет валидность значения.
-     *
-     * @param o Проверяемое значение.
-     * @return Валидно / не валидно.
-     */
+public interface NumberSchema extends Schema {
+
+    @Override
     boolean isValid(Object o);
 
     /**

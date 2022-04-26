@@ -72,8 +72,8 @@ class DefaultMapSchemaTest {
         Map<String, Schema> shape = new HashMap<>();
         final int nameMinLength = 4;
         final int correctAge = 20;
-        shape.put("name", (Schema) new DefaultStringSchema().minLength(nameMinLength));
-        shape.put("age", (Schema) new DefaultNumberSchema().required().positive());
+        shape.put("name", new DefaultStringSchema().minLength(nameMinLength));
+        shape.put("age", new DefaultNumberSchema().required().positive());
 
         Map<String, Object> wrongTestedValue1 = new HashMap<>();
         wrongTestedValue1.put("name", "Al");
@@ -104,10 +104,10 @@ class DefaultMapSchemaTest {
         final int inBetween = 12;
 
         Map<String, Schema> shape1 = new HashMap<>();
-        shape1.put("name", (Schema) new DefaultStringSchema().contains(shouldContainString));
+        shape1.put("name", new DefaultStringSchema().contains(shouldContainString));
 
         Map<String, Schema> shape2 = new HashMap<>();
-        shape2.put("age", (Schema) new DefaultNumberSchema().required().range(min, max));
+        shape2.put("age", new DefaultNumberSchema().required().range(min, max));
 
         Map<String, Object> correctValue = new HashMap<>();
         correctValue.put("name", stringThatContains);
@@ -128,7 +128,7 @@ class DefaultMapSchemaTest {
     @Test
     void methodsIntersectionTest() {
         Map<String, Schema> shape = new HashMap<>();
-        shape.put("age", (Schema) new DefaultNumberSchema().required().positive());
+        shape.put("age", new DefaultNumberSchema().required().positive());
 
         final int size = 2;
         Map<String, Object> testedValue = new HashMap<>();

@@ -1,9 +1,11 @@
 package hexlet.code.schemas.stringschema;
 
+import hexlet.code.schemas.Schema;
 import org.jetbrains.annotations.NotNull;
 
-public interface StringSchema {
+public interface StringSchema extends Schema {
 
+    @Override
     boolean isValid(Object o);
 
     /**
