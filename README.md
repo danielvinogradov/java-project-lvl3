@@ -9,7 +9,7 @@
 Вариация на тему проекта Хекслета "Валидатор данных".
 
 Небольшая библиотека для простой валидации данных. Реализует fluent interface. Есть методы для работы с `String`
-, `Integer` и `Map`.
+, `Integer` и `Map`. Подробнее в javadoc.
 
 Простой пример использования для `String`:
 
@@ -59,3 +59,27 @@ class App {
     }
 }
 ```
+
+Кол-во добавляемых валидаторов не ограничено. Порядок добавления валидаторов не имеет значения.
+
+```java
+class App {
+    void someMethod() {
+        Validator v = new Validator();
+        MapSchema schema = v.map();
+
+        schema
+                .required()
+                .shape(first_shape)
+                .shape(second_shape)
+                .size(3)
+                .shape(third_shape);
+    }
+}
+```
+
+## `null`
+
+В связи с особенностями ТЗ, валидаторы работают с `null` по-разному. В `NumberSchema` значение `null`
+считается валидным (кроме проверки на `required`). Т.е. `schema.positive(null)` вернет `true`. В остальных же схемах,
+значение `null` считается невалидным, т.е. `stringSchema.contains("some str").isValid(null) == false`.
